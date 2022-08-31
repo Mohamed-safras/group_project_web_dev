@@ -1,0 +1,186 @@
+:root {
+  --color-primary: #fff;
+  --bg-color: rgb(223, 222, 222);
+  --button-background-color: #008cff;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,900;1,100;1,200;1,300;1,500;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--bg-color);
+  font-family: "Poppins", sans-serif;
+}
+section {
+  height: 100vh;
+}
+a {
+  text-decoration: none;
+}
+a:focus {
+  color: var(--button-background-color);
+}
+.nav_bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 25px;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-primary);
+  height: 70px;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#nav_links {
+  display: flex;
+  list-style-type: none;
+}
+
+#nav_links li {
+  margin-left: 15px;
+  font-size: 17px;
+  font-weight: 600;
+  position: relative;
+}
+#nav_links li a {
+  color: #111;
+}
+#nav_links li a:focus {
+  color: #111;
+}
+#nav_links li::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  background: #008cff;
+  transform: scale(0);
+  transform-origin: center;
+  transition: all 350ms ease-in-out;
+}
+
+#nav_links li.active::after,
+#nav_links li:hover::after,
+#nav_links li:hover a,
+#nav_links li.active a {
+  transform: scale(1);
+  color: #008cff;
+}
+
+.btn {
+  display: block;
+  margin: 20px 0;
+  min-height: 50px;
+  padding: 13px 24px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+  background-position: top center;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  transition-property: background, color;
+  width: 150px;
+}
+
+.login {
+  position: relative;
+  display: block;
+  color: var(--button-background-color);
+  border-radius: 26px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  background-color: transparent;
+  background-clip: padding-box;
+  overflow: hidden;
+  z-index: 1;
+}
+.login::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border: 2px solid transparent;
+  background-image: linear-gradient(var(--color-primary), var(--color-primary)),
+    linear-gradient(90deg, var(--button-background-color), #6942ef);
+  background-clip: padding-box, border-box;
+  background-repeat: repeat-x;
+  background-size: calc(100% + 2px * 2) calc(100% + 2px * 2);
+  background-position: center;
+  border-radius: 26px;
+  z-index: -1;
+  transition: border-color 0.2s;
+}
+
+.login::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70vmax;
+  height: 70vmax;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    90deg,
+    var(--button-background-color),
+    #6942ef
+  );
+  transform-origin: center;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.login:hover {
+  color: var(--color-primary);
+}
+.login:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.login:active {
+  color: #c3c4d5;
+}
+
+.login:focus::before {
+  border-color: #008cff;
+}
+
+/* responsive */
+
+@media screen and (max-width: 768px) {
+  #nav_links {
+    display: none;
+  }
+}
