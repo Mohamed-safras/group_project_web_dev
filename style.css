@@ -1,6 +1,6 @@
 :root {
   --color-primary: #fff;
-  --bg-color: rgb(223, 222, 222);
+  --bg-color: rgb(237, 239, 245);
   --button-background-color: #008cff;
 }
 
@@ -17,7 +17,23 @@ html {
 body {
   background-color: var(--bg-color);
   font-family: "Poppins", sans-serif;
+  width: 100%;
 }
+
+button {
+  border: none;
+  outline: none;
+}
+ul {
+  list-style-type: none;
+}
+
+header {
+  height: 100vh;
+  /* max-width: 1000px; */
+  margin: auto;
+}
+
 section {
   height: 100vh;
 }
@@ -27,19 +43,27 @@ a {
 a:focus {
   color: var(--button-background-color);
 }
+
+/* nav-bar section */
 .nav_bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 25px;
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: var(--color-primary);
+  justify-content: space-around;
+  padding: 10px 20px;
   height: 70px;
+  z-index: 999;
+  overflow: hidden;
+  transition: all 150ms ease-in-out;
 }
+.sticky {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: var(--color-primary);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
 .logo {
   width: 50px;
   height: 50px;
@@ -90,7 +114,7 @@ a:focus {
   color: #008cff;
 }
 
-.btn {
+.nav_bar > .btn {
   display: block;
   margin: 20px 0;
   min-height: 50px;
@@ -112,7 +136,7 @@ a:focus {
   width: 150px;
 }
 
-.login {
+.nav_bar > .login {
   position: relative;
   display: block;
   color: var(--button-background-color);
@@ -124,7 +148,7 @@ a:focus {
   overflow: hidden;
   z-index: 1;
 }
-.login::before {
+.nav_bar > .login::before {
   content: "";
   position: absolute;
   left: 0;
@@ -143,7 +167,7 @@ a:focus {
   transition: border-color 0.2s;
 }
 
-.login::after {
+.nav_bar > .login::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -162,25 +186,128 @@ a:focus {
   z-index: -1;
 }
 
-.login:hover {
+.nav_bar > .login:hover {
   color: var(--color-primary);
 }
-.login:hover::after {
+.nav_bar > .login:hover::after {
   transform: translate(-50%, -50%) scale(1);
 }
 
-.login:active {
+.nav_bar > .login:active {
   color: #c3c4d5;
 }
 
-.login:focus::before {
+.nav_bar > .login:focus::before {
   border-color: #008cff;
 }
 
+/* Personal section */
+
+.container {
+  position: relative;
+  /* background-image: url("./src/images/lubo-minar-j2RgHfqKhCM-unsplash.jpg"); */
+}
+
+.container .container-left {
+  padding: 10px;
+}
+.container .container-ri {
+  padding: 10px;
+}
+
+.card {
+  width: 80px;
+  height: 80px;
+  padding: 5px;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#teeth {
+  right: 600px;
+  bottom: 220px;
+}
+#syringe {
+  right: 400px;
+}
+#heart {
+  right: 280px;
+  top: 220px;
+}
+#drug {
+  right: 150px;
+  bottom: 140px;
+}
 /* responsive */
 
 @media screen and (max-width: 768px) {
   #nav_links {
     display: none;
   }
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  /* gap: 40px; */
+}
+
+.container .contianer-right,
+.container .container-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.doctor-img {
+  max-width: 350px;
+  height: 350px;
+}
+
+.doctor-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.container-left .container-left-intro h5 {
+  font-size: 0.9em;
+  text-transform: uppercase;
+  color: var(--button-background-color);
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.container-left .container-left-intro h2 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: rgb(7, 5, 5);
+}
+.container-left > .container-left-intro > .btn {
+  background: var(--button-background-color);
+  padding: 5px;
+  color: var(--color-primary);
+  font-size: 15px;
+  width: 150px;
+  margin: 5px 0;
+  height: 40px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.container-left > .container-left-intro > .get-application {
+  background: var(--color-primary);
+  color: var(--button-background-color);
+  border: 2px solid var(--button-background-color);
 }
