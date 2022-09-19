@@ -28,17 +28,12 @@ ul {
   list-style-type: none;
 }
 
-header {
-  height: 100vh;
-  /* max-width: 1000px; */
-  margin: auto;
-}
-
 section {
-  height: 100vh;
+  height: calc(100vh - 70px);
 }
 a {
   text-decoration: none;
+  color: #fff;
 }
 a:focus {
   color: var(--button-background-color);
@@ -54,6 +49,8 @@ a:focus {
   z-index: 999;
   overflow: hidden;
   transition: all 150ms ease-in-out;
+  background: #fff;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 .sticky {
   position: fixed;
@@ -205,7 +202,6 @@ a:focus {
 
 .container {
   position: relative;
-  /* background-image: url("./src/images/lubo-minar-j2RgHfqKhCM-unsplash.jpg"); */
 }
 
 .container .container-left {
@@ -232,21 +228,7 @@ a:focus {
   height: 100%;
   object-fit: cover;
 }
-#teeth {
-  right: 600px;
-  bottom: 220px;
-}
-#syringe {
-  right: 400px;
-}
-#heart {
-  right: 280px;
-  top: 220px;
-}
-#drug {
-  right: 150px;
-  bottom: 140px;
-}
+
 /* responsive */
 
 @media screen and (max-width: 768px) {

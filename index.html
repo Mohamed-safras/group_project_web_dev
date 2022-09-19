@@ -4,46 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <script src="app.js" defer></script>
     <title>Document</title>
   </head>
   <body>
-    <header id="home">
-      <nav class="nav_bar">
-        <div class="logo">
-          <img src="./src/images/logo.png" alt="" />
-        </div>
-        <ul id="nav_links">
-          <li class="nav_link active"><a href="#home">Home</a></li>
-          <li class="nav_link"><a href="#about">About us</a></li>
-          <li class="nav_link"><a href="#services">Services</a></li>
-          <li class="nav_link"><a href="#pharmacy">Help & FAQ</a></li>
-        </ul>
+    <nav class="nav_bar">
+      <div class="logo">
+        <img src="./src/images/logo.png" alt="" />
+      </div>
+      <ul id="nav_links">
+        <li class="nav_link active"><a href="./index.html">Home</a></li>
+        <li class="nav_link">
+          <a href="./src/pages/about.html">About us</a>
+        </li>
+        <li class="nav_link">
+          <a href="./src/pages/service.html">Services</a>
+        </li>
+      </ul>
+      <a href="/src/pages/login.html" class="btn login">Log in</a>
+    </nav>
 
-        <a href="./src/pages/login.html" class="btn login">Log in</a>
-      </nav>
-      <section class="container">
-        <div class="container-left">
-          <div class="container-left-intro">
-            <h5>Advance Healthcare</h5>
-            <h2>
-              Always Caring <br />
-              Always Help
-            </h2>
-            <button class="btn get-application">Get Application</button>
-            <button class="btn">Learn More</button>
-          </div>
+    <section class="container">
+      <div class="container-left">
+        <div class="container-left-intro">
+          <h5>Advance Healthcare</h5>
+          <h2>
+            Always Caring <br />
+            Always Help
+          </h2>
         </div>
-        <div class="contianer-right">
-          <div class="doctor-img">
-            <img src="./src/images/male-doctor.jpg" alt="" />
-          </div>
+      </div>
+      <div class="contianer-right">
+        <div class="doctor-img">
+          <img src="./src/images/male-doctor.jpg" alt="" />
         </div>
-      </section>
-    </header>
-    <section id="about">about</section>
-    <section id="services">services</section>
-    <section id="pharmacy">pharmacy</section>
+      </div>
+    </section>
   </body>
 </html>
